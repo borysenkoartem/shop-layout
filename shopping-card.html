@@ -1,0 +1,211 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link href="static/css/bootstrap.css" rel="stylesheet">
+    <link href="static/css/app.css" rel="stylesheet">
+
+    <title>Shop layout</title>
+</head>
+<body>
+<header>
+    <nav class="navbar navbar-expand bg-dark mb-3">
+        <div class="navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item">
+                    <a class="nav-link text-white" href="products.html">Shop<span class="sr-only">(current)</span></a>
+                </li>
+            </ul>
+
+            <ul id="currentShoppingCart" class="pr-2 nav navbar-nav navbar-right">
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true"
+                       aria-expanded="false">
+                        <i class="fa fa-shopping-cart" aria-hidden="true"></i> Shopping cart (<span
+                            class="total-count">2</span>)<span class="caret"></span>
+                    </a>
+                    <div class="dropdown-menu p-2">
+                        Total count: <span class="total-count">2</span><br>
+                        Total cost: <span class="total-cost">$ 2000</span><br>
+                        <a href="shopping-card.html" class="btn btn-primary btn-block">View cart</a>
+                    </div>
+                </li>
+            </ul>
+            <a href="#" class="btn btn-primary navbar-btn navbar-right sign-in"> Sign in</a>
+        </div>
+    </nav>
+</header>
+
+<div class="container-fluid">
+    <div class="row">
+        <aside class="col-xs-12 col-sm-4 col-md-3 col-lg-2">
+
+            <div class="d-block d-sm-none xs-option-container">
+                <a class="dropdown-toggle float-right" data-toggle="collapse" href="#productCatalog">Product catalog</a>
+                <a class="dropdown-toggle" data-toggle="collapse" href="#findProducts">Find products</a>
+            </div>
+            <!-- Search form -->
+            <form action="products.html">
+                <div id="findProducts" class="card text-white bg-dark collapse">
+                    <div class="card-header">Find products</div>
+                    <div class="card-body">
+                        <div class="input-group">
+                            <input type="text" name="query" class="form-control mr-sm-2" placeholder="Search query">
+                            <span class="input-group-btn">
+                                <a id="goSearch" class="btn btn-outline-light">Go!</a>
+                            </span>
+                        </div>
+                        <div class="more-options">
+                            <a class="dropdown-toggle" data-toggle="collapse" href="#searchOptions">More filters</a>
+                        </div>
+                    </div>
+                    <!-- searchOptions-->
+                    <div id="searchOptions" class="collapse">
+                        <!-- Category filters-->
+                        <div class="card-header">Category filters</div>
+                        <div class="categories">
+                            <div class="list-group-item text-dark">
+                                <div class="checkbox">
+                                    <label> <input type="checkbox" id="allCategories"> All </label>
+                                </div>
+                            </div>
+                            <div class="list-group-item text-dark">
+                                <div class="checkbox">
+                                    <label><input type="checkbox" name="category" id="E-book" value="1"
+                                                  class="search-option"> E-book</label>
+                                </div>
+                            </div>
+                            <div class="list-group-item text-dark">
+                                <div class="checkbox">
+                                    <label><input type="checkbox" name="category" id="Laptop" value="2"
+                                                  class="search-option"> Laptop</label>
+                                </div>
+                            </div>
+                            <div class="list-group-item text-dark">
+                                <div class="checkbox">
+                                    <label><input type="checkbox" name="category" id="Smartwatch" value="3"
+                                                  class="search-option"> Smartwatch</label>
+                                </div>
+                            </div>
+                            <div class="list-group-item text-dark">
+                                <div class="checkbox">
+                                    <label><input type="checkbox" name="category" id="Smartphone" value="4"
+                                                  class="search-option"> Smartphone</label>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Category filters-->
+                        <!-- producers-->
+                        <div class="card-header">Producers filters</div>
+                        <div class="producers">
+                            <div class="list-group-item text-dark">
+                                <div class="checkbox">
+                                    <label> <input type="checkbox" id="allProducers"> All </label>
+                                </div>
+                            </div>
+                            <div class="list-group-item text-dark">
+                                <div class="checkbox">
+                                    <label><input type="checkbox" name="producer" value="1" class="search-option"> Apple</label>
+                                </div>
+                            </div>
+                            <div class="list-group-item text-dark">
+                                <div class="checkbox">
+                                    <label><input type="checkbox" name="producer" value="2" class="search-option">
+                                        Amazone</label>
+                                </div>
+                            </div>
+                            <div class="list-group-item text-dark">
+                                <div class="checkbox">
+                                    <label><input type="checkbox" name="producer" value="3" class="search-option">
+                                        Samsung</label>
+                                </div>
+                            </div>
+                            <div class="list-group-item text-dark">
+                                <div class="checkbox">
+                                    <label><input type="checkbox" name="producer" value="4" class="search-option">
+                                        Huawei</label>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- producers-->
+                    </div>
+                    <!-- searchOptions-->
+                </div>
+            </form>
+            <!-- Categories -->
+            <!--collapse-->
+            <div id="productCatalog" class="card mt-3 text-white bg-dark collapse">
+                <div class="card-header">Product catalog</div>
+                <div class="list-group">
+                    <a href="#" class="list-group-item">E-book <span
+                            class="badge badge-secondary float-right mr-3">1</span></a>
+                    <a href="#" class="list-group-item">Laptop <span
+                            class="badge badge-secondary float-right mr-3">5</span></a>
+                    <a href="#" class="list-group-item">Smartphone <span
+                            class="badge badge-secondary float-right mr-3">53</span></a>
+                    <a href="#" class="list-group-item">Smartwatch <span
+                            class="badge badge-secondary float-right mr-3">14</span></a>
+                </div>
+            </div>
+            <!-- /Categories -->
+        </aside>
+
+        <main class="col-xs-12 col-sm-8 col-md-9 col-lg-10">
+            <div id="shoppingCart1" class="container-fluid">
+                <div class="row">
+                    <div class="alert alert-primary container-fluid text-center" role="alert">
+                        To make order, please sign in.
+                    </div>
+                    <table class="table table-bordered">
+                        <thead>
+                        <tr>
+                            <th>Product</th>
+                            <th>Price</th>
+                            <th>Count</th>
+                            <th>Action</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+
+                        <tr id="product3241" class="item">
+                            <td class="text-center"><img class="small" src="media/ipad.jpeg"
+                                                         alt="ipad"><br>Ipad Grey(2018) 64 GB
+                            </td>
+                            <td class="price">$ 370</td>
+                            <td class="count">2</td>
+                            <td>
+                                <a class="btn btn-danger remove-product" data-id-product="${shoppingCartEntry.key.id}"
+                                   data-count="1">Remove one</a>
+                                <a class="btn btn-danger remove-product" data-id-product="${shoppingCartEntry.key.id}"
+                                   data-count="${shoppingCartEntry.value}">Remove all</a>
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td colspan="2" class="text-right"><strong>Total:</strong></td>
+                            <td colspan="2" class="total">$740</td>
+                        </tr>
+                        </tbody>
+                    </table>
+
+                    <div class="container-fluid text-center">
+                        <a class="btn btn-primary" href="/#">Make order</a>
+                    </div>
+                </div>
+            </div>
+        </main>
+
+    </div>
+</div>
+
+<footer class="footer">
+    <div class="container">
+        <p class="text-center">Shop demo. Borysenko Artem</p>
+    </div>
+</footer>
+<script src="static/js/jquery.js"></script>
+<script src="static/js/bootstrap.js"></script>
+<script src="static/js/app.js"></script>
+</body>
+</html>
